@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/result_style.css" />
+    <title>Prediction Result</title>
+  </head>
+  <body>
+    <h1>Prediction Result</h1>
+    <div class="imgbox">
+      <img src="{{ image_url }}" alt="prediction result" />
+    </div>
+    <p>{{ prediction }}</p>
+
+    <a class="lin" href="/dashboard">Back to dashboard</a>
+
+    <div class="aboutmodel">
+      <h2>About Model</h2>
+      <p>
+        Introducing our cutting-edge AI model designed for precise cow health
+        classification. Trained on a diverse dataset, the model utilizes
+        sophisticated deep learning techniques to accurately discern between
+        healthy and infected cows through image analysis. Its seamless
+        integration, enhanced image processing, and fine-tuned precision make it
+        a powerful tool for farmers and veterinarians. The user-friendly
+        interface ensures effortless health assessments, providing timely
+        insights for proactive herd management. Continuous optimization
+        guarantees that our AI model remains at the forefront of innovation,
+        offering a transformative solution for streamlined and efficient cow
+        health monitoring.
+      </p>
+      <div class="data">
+        <div class="value">Accuracy    90.85</div>
+        <div class="value">Specificity 93.02</div>
+        <div class="value">Sensitivity 83.89</div>
+      </div>
+      <h2>Performance Measure</h2>
+      <div class="cards">
+        <div class="graph">
+            <h3>ROC Curve</h3>
+            <img src="/static/images/roc.jpg" alt="roc curve"/>
+        </div>
+        <div class="graph">
+            <h3>Sensitivity</h3>
+            <img src="/static/images/sensi.jpg" alt="roc curve"/>
+        </div>
+        <div class="graph">
+            <h3>Specificity</h3>
+            <img src="/static/images/speci.jpg" alt="roc curve"/>
+        </div>
+        <div class="graph">
+            <h3>Confusion Matrix</h3>
+            <img src="/static/images/cmatrix.jpg" alt="roc curve"/>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="/static/dash.css">
+    <link rel="stylesheet" href="/static/disease_prediction.css">
+    <title>Disease Prediction</title>
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="static\images\logo.png">
+                    <h2>C-<span class="danger">Doc</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="/dashboard">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="/livestock">
+                    <span class="material-icons-sharp">
+                        pets
+                    </span>
+                    <h3>Livestock</h3>
+                </a>
+                <a href="expenditure">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>Expenditure</h3>
+                </a>
+                <a href="/income">
+                    <span class="material-icons-sharp">
+                        savings
+                    </span>
+                    <h3>Income</h3>
+                </a>
+                <a href="/disease_prediction">
+                    <span class="material-icons-sharp">
+                        biotech
+                    </span>
+                    <h3>LSD analysis</h3>
+                    <a href="/logout">
+                        <span class="material-icons-sharp">
+                            logout
+                        </span>
+                        <h3>Logout</h3>
+                    </a>
+            </div>
+        </aside>
+        <!------------------------------------Main Content----------------------------------------------------------------------->
+        <main>
+            <h1>Disease Prediction</h1>
+            <div class="form-box">
+                <form action="/predict" method="post" enctype="multipart/form-data">
+                    <label for="file" class="file-input-label">Choose File</label>
+                    <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png, .gif" onchange="updateLabel()">
+                    <span id="file-name" class="file-name">No file chosen</span>
+                    <input class="button" type="submit" value="Predict">
+                </form>
+            </div>
+        </main>
+
+        <!-------------------------------------------- Right Section ------------------------------------------------------------>
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+            </div>
+            <!-- End of Nav -->
+        </div>
+    </div>
+    <script src="/static/disease_prediction.js"></script>
+    <script src="/static/dash.js"></script>
+</body>
+
+</html>

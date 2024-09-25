@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+:root{
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.form-box {
+    left: 200px;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 800px;
+    max-width: 100%;
+    height: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--color-white);
+    padding: 20px;
+}
+
+form {
+    display: contents;
+    height: fit-content;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+/* Added styles for the form field */
+input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.file-input-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--color-white);
+    height: 250px;
+    width: 700px;
+    padding: 10px;
+    border: 2px solid var(--color-danger);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Style the label as a button */
+.file-input-label:hover {
+    background-color: var(--color-white);
+}
+
+.file-name {
+    text-align-last: center;
+    height: auto;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--color-dark);
+}
+/* Added styles for the Predict button */
+.button {
+    font-size: 15px;
+    font-weight: 500;
+    top: 30px;
+    position: relative;
+    width: 30%;
+    padding: 10px;
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+

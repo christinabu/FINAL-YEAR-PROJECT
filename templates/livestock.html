@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="/static/dash.css">
+    <link rel="stylesheet" href="/static/livestock.css">
+    <title>Livestock</title>
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="static\images\logo.png">
+                    <h2>C-<span class="danger">Doc</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="/dashboard">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="/livestock">
+                    <span class="material-icons-sharp">
+                        pets
+                    </span>
+                    <h3>Livestock</h3>
+                </a>
+                <a href="/expenditure">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>Expenditure</h3>
+                </a>
+                <a href="/income">
+                    <span class="material-icons-sharp">
+                        savings
+                    </span>
+                    <h3>Income</h3>
+                </a>
+                <a href="/disease_prediction">
+                    <span class="material-icons-sharp">
+                        biotech
+                    </span>
+                    <h3>LSD analysis</h3>
+                    <a href="/logout">
+                        <span class="material-icons-sharp">
+                            logout
+                        </span>
+                        <h3>Logout</h3>
+                    </a>
+            </div>
+        </aside>
+        <!------------------------------------Main Content----------------------------------------------------------------------->
+        <main>
+            <h1>Livestock</h1>
+            <h3 class="info">Add your Livestock information here </h3>
+            <form id="livestockForm" action="/livestock" method="POST">
+                <label for="cow_id">Cow ID:</label>
+                <input type="number" id="cow_id" name="cow_id"  required>
+        
+                <label for="breed">Breed:</label>
+                <input type="text" id="breed" name="breed"  required>
+        
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+        
+                <label for="avg_milk">Average Milk Production:</label>
+                <input type="number" id="avg_milk" name="avg_milk" " required>
+        
+                <label for="buying_price">Buying Price:</label>
+                <input type="number" id="buying_price" name="buying_price" required>
+        
+                <input type="submit" value="Submit">
+            </form>
+            <h2 class="info2">Livestock Information</h2>
+            <table id="livestockTable">
+                <thead>
+                    <tr>
+                        <th>Cow ID</th>
+                        <th>Breed</th>
+                        <th>Date of Birth</th>
+                        <th>Average Milk Production</th>
+                        <th>Buying Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if livestock_data %}
+                        {% for cow in livestock_data.values() %}
+                            <tr>
+                                <td>{{ cow.cow_id }}</td>
+                                <td>{{ cow.breed }}</td>
+                                <td>{{ cow.dob }}</td>
+                                <td>{{ cow.avg_milk }}</td>
+                                <td>{{ cow.buying_price }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+            <!--*********************************************pagination button*****************************************-->
+            <div id="pagination">
+            </div>
+        </main>
+        <!-------------------------------------------- Right Section ------------------------------------------------------------>
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+            </div>
+            <!-- End of Nav -->
+        </div>
+    </div>
+    <script src="/static/dash.js"></script>
+</body>
+<script src="/static/livestock.js"></script>
+</html>

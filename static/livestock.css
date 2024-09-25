@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+:root{
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-black:  #000;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+    --color-select: #f1f1f1;
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables{
+    --color-black:  #ffffff;
+    --color-select:#5a6177;
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* main-content.css */
+
+
+/* form.css */
+.info{
+    color: var(--color-info-dark);
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.info2{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+form {
+    box-shadow: var(--box-shadow);
+    transition: all .3s ease;
+    display: grid;
+    grid-template-columns: 10% 40% 10% 40%;
+    grid-template-rows: 50px 50px 50px 10px;
+    margin-bottom: 20px;
+    background-color: var(--color-white);
+    padding: 20px 20px 20px 20px;
+    border-radius: 10px;
+}
+
+
+label {
+    color: var(--color-black);
+    position: relative;
+    top: 17px;
+    padding-right: 5px;
+    padding-left: 5px;
+    left: 9px;
+    width: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="number"], input[type="text"], input[type="date"] {
+    background-color: var(--color-select);
+    color: var(--color-black);
+    position: relative;
+    width: 100%;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    position: relative;
+    left: 100px;
+    height: 46px;
+    width: 356px;
+    padding: 0px 20px;
+    background-color: var(--color-success);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#livestockTable{
+    padding: 5px;
+}
+
+table {
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    color: var(--color-info-dark);
+    border: 1px solid var(--color-white);
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-white);
+}
+
+tr:nth-child(even) {
+    background-color: var(--color-white);
+}
+
+tr:hover {
+    background-color: var(--color-select);
+}
+
+
+#pagination{
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.prev, .nxt {
+    top: 3px;
+    position: relative;
+    height: 22px;
+    color: var(--color-dark);
+    padding: 0px 4px 0px 4px;
+    border-radius: 2px;
+    background-color: var(--color-white);
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: var(--box-shadow);
+}
+
+button{
+    box-shadow: var(--box-shadow);
+    color: var(--color-dark);
+    background-color: var(--color-white);
+    width: 30px;
+    margin: 3px;
+    border-radius: 2px;
+}
+
+button.active-page {
+    background-color: var(--color-success);
+}
+
+@media screen and (max-width: 768px)
+{
+    input[type="submit"] {
+        position: relative;
+        left: 75px;
+        height: 45px;
+        width: 270px;
+        padding: 0px 20px;
+        background-color: var(--color-success);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    input[type="submit"] {
+        position: relative;
+        left: 70px;
+        height: 45px;
+        width: 240px;
+        padding: 0px 20px;
+        background-color: var(--color-success);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}

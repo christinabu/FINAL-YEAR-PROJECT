@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="/static/dash.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-3d@latest"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="static\images\logo.png">
+                    <h2>C-<span class="danger">Doc</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="/dashboard">
+                    <span class="material-icons-sharp">
+                        dashboard
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="/livestock">
+                    <span class="material-icons-sharp">
+                        pets
+                    </span>
+                    <h3>Livestock</h3>
+                </a>
+                <a href="/expenditure">
+                    <span class="material-icons-sharp">
+                        receipt_long
+                    </span>
+                    <h3>Expenditure</h3>
+                </a>
+                <a href="/income">
+                    <span class="material-icons-sharp">
+                        savings
+                    </span>
+                    <h3>Income</h3>
+                </a>
+                <a href="/disease_prediction">
+                    <span class="material-icons-sharp">
+                        biotech
+                    </span>
+                    <h3>LSD analysis</h3>
+                    <!--  </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        mail_outline
+                    </span>
+                    <h3>Tickets</h3>
+                    <span class="message-count">27</span>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+                    <h3>Sale List</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        report_gmailerrorred
+                    </span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        settings
+                    </span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        add
+                    </span>
+                    <h3>New Login</h3>
+                </a> -->
+                    <a href="/logout">
+                        <span class="material-icons-sharp">
+                            logout
+                        </span>
+                        <h3>Logout</h3>
+                    </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main>
+            <h1>Dashboard</h1>
+            <h3 class="info1">Track your monthly revenue here</h3>
+            <!-- Analyses -->
+            <div class="analyse">
+                <div class="sales">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Income</h3>
+                            <h1>₹ {{ total_income }}</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>{{ income_change }}%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="visits">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Expenditure</h3>
+                            <h1>₹ {{ total_expenditure }}</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>{{ expenditure_change }}%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="searches">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Profit</h3>
+                            <h1>₹ {{ profit }}</h1>
+                        </div>
+                        <div class="progresss">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="percentage">
+                                <p>{{ profit_change }}%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--**************************************End of Analyses *****************************************************-->            
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                <div class="dark-mode">
+                    <span class="material-icons-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-icons-sharp">
+                        dark_mode
+                    </span>
+                </div>
+
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>{{ username }}</b></p>
+                    </div>
+                </div>
+
+            </div>
+            <!--Expenditure chart-->
+            <div class="chart">
+                <h2 class="expenditure_heading">Expenditure Chart</h2>
+                <canvas id="expenditureChart" width="400" height="400">Expenditure Chart</canvas>
+            </div>
+        </div>
+        <script>
+            var categoryLabels = JSON.parse('{{ category_labels | tojson | safe }}');
+            var categoryAmounts = JSON.parse('{{ category_amounts | tojson | safe }}');
+        </script>
+        <script src="/static/dash.js"></script>
+</body>
+
+</html>

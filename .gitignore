@@ -1,0 +1,11 @@
+#ignore all the files with .h5 
+*.h5
+C:\Users\proma\Desktop\FINAL YEAR PROJECT\RESNET-50-v1(gokul).h5
+serviceAccountKey.json
+serviceAccountKeygoku.json
+C:\Users\proma\Desktop\FINAL YEAR PROJECT\serviceAccountKey.json
+C:\Users\proma\Desktop\FINAL YEAR PROJECT\serviceAccountKeygoku.json
+my_new_env/
+uploads
+C:\Users\proma\Desktop\FINAL YEAR PROJECT\temp.py
+C:\Users\proma\Desktop\FINAL YEAR PROJECT\tempCodeRunnerFile.py

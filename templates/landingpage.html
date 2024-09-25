@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>C-DOC | Livestock Management</title>
+        <link rel="stylesheet" href="/static/landingpage.css">
+    </head>
+    <body>
+        <section>
+            <header>
+                <a href="#"><img src="{{ url_for('static', filename='images/logo.png') }}" class="logo"></a>
+                <ul>
+                    <li><a href="/signup">
+                        <button>Sign In</button>
+                    </a></li>
+                </ul>
+            </header>
+            <div class="content">
+                <div class="textBox">
+                    <h2>Revolutionize Your<br>Farming <span>Experience!</span></h2>
+                    <p>
+                        Embrace the future of farming with a game-changing solution that<br>streamlines livestock management and predicts Lumpy Skin<br>Disease. We're here to empower your farm with the latest in<br> agriculture technology and data-driven success. Get ready for a <br>new era of efficiency and disease prevention!
+                    </p>
+                    <a href="/signup">Join Now
+                    </a>
+                </div>
+                <div class="imgBox">
+                        <img src="{{ url_for('static', filename='images/landing_page.png') }}" class="welcome" height="600">
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
